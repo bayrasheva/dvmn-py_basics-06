@@ -1,28 +1,28 @@
-def has_digit(PASSWORD):
-    return any(symbol.isdigit() for symbol in PASSWORD)
+def has_digit(password):
+    return any(symbol.isdigit() for symbol in password)
 
 
-def has_upper_letters(PASSWORD):
-    return any(symbol.isupper() for symbol in PASSWORD)
+def has_upper_letters(password):
+    return any(symbol.isupper() for symbol in password)
 
 
-def has_lower_letters(PASSWORD):
-    return any(symbol.islower() for symbol in PASSWORD)
+def has_lower_letters(password):
+    return any(symbol.islower() for symbol in password)
 
 
-def has_symbols(PASSWORD):
+def has_symbols(password):
     return any(
         not symbol.isdigit() and not symbol.isalpha()
-        for symbol in PASSWORD
+        for symbol in password
     )
 
 
-def is_long_enough(PASSWORD):
-    return len(PASSWORD) >= 12
+def is_long_enough(password):
+    return len(password) >= 12
 
 
 def main():
-    PASSWORD = input("Введите пароль: ")
+    password = input("Введите пароль: ")
 
 
     checks = [
@@ -36,7 +36,7 @@ def main():
     score = 0
 
     for check in checks:
-        if check(PASSWORD):
+        if check(password):
             score = score + 2
 
     print("Рейтинг пароля:", score)
